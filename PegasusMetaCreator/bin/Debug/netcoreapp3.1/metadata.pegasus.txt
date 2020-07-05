@@ -1,0 +1,10 @@
+
+collection: aaa
+launch: {file.path}
+files:
+netcoreapp3.1\PegasusMetaCreator.exe
+..\netcoreapp3.1\PegasusMetaCreator.exe
+
+game: PegasusMetaCreator
+assets.box_front: netcoreapp3.1\PegasusMetaCreator.png
+file: netcoreapp3.1\PegasusMetaCreator.exe

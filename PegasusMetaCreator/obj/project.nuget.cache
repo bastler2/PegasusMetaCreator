@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "qZ6Xxw6VRhsGi51BnT9uSw7tWeetfX6n75zHPrspB5mzlpnZqWKKftb+qp6MgNbrDuIQx/7mKks95Se90cxiOQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\Sebastian\\Source\\Repos\\bastler2\\PegasusMetaCreator\\PegasusMetaCreator\\PegasusMetaCreator.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\Sebastian\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\Sebastian\\.nuget\\packages\\prism.core\\7.2.0.1422\\prism.core.7.2.0.1422.nupkg.sha512"
+  ],
+  "logs": []
+}

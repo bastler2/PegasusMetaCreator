@@ -1,0 +1,215 @@
+﻿<Window x:Class="PegasusMetaCreator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Pegasus Meta Creator" Height="450" Width="800"
+        DataContext="{StaticResource MainWindowViewModel}">
+    <Grid>
+        <TabControl>
+            <TabItem Header="Metadata Editor/Creator">
+
+
+                <Grid Margin="3">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1.5*"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    <GroupBox Header="Programs">
+                        <Grid Margin="3">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="*"/>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <ListView ItemsSource="{Binding Executables}" SelectedItem="{Binding SelectedExecutable}"/>
+                            <Button Grid.Row="2" Content="Reload" Command="{Binding ReloadExecutables}"/>
+                        </Grid>
+                    </GroupBox>
+                    <GroupBox Grid.Row="1" Header="Added programs">
+                        <ListView ItemsSource="{Binding AddedExecutablesUI}" SelectedItem="{Binding SelectedAddedExecutablesUI}"/>
+                    </GroupBox>
+                    <Grid Grid.Column="1" Grid.RowSpan="2">
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="*"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+                        <GroupBox Header="Properties">
+                            <ScrollViewer >
+                                <ItemsControl ItemsSource="{Binding Settings}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="2.5*"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Content="{Binding Name}"></Label>
+                                                <TextBox IsEnabled="{Binding isEnabled}" Height="{Binding DefaultTextBoxHeight}" Grid.Column="1" TextWrapping="{Binding TextWrapping}" AcceptsReturn="{Binding AcceptsReturn}" VerticalScrollBarVisibility="{Binding VerticalScrollBarVisibility}" Text="{Binding Content}" Margin="3,0,3,3"></TextBox>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </ScrollViewer>
+                        </GroupBox>
+                        <GroupBox Grid.Row="1" Header="Options">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width=".5*"/>
+                                    <ColumnDefinition Width=".5*"/>
+                                    <ColumnDefinition Width="*"/>
+                                </Grid.ColumnDefinitions>
+                                <Button Grid.Column="0" Content="Add Program" Command="{Binding AddExecutables}"/>
+                                <Button Grid.Column="1" Content="Save changes" Command="{Binding SaveSettings}" Margin="3,0,0,0"/>
+                                <Button Grid.Column="2" Content="Export" Command="{Binding ExportMetafile}" Margin="3,0,3,0"/>
+                                <Button Grid.Column="3" Content="Import" Command="{Binding ImportMetafile}" Margin="0,0,3,0"/>
+                                <Button Grid.Column="4" Content="Delete program" Command="{Binding DeleteProgram}"/>
+
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </Grid>
+            </TabItem>
+            <TabItem Header="Configurations">
+                <ScrollViewer>
+                    <Grid>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="*"/>
+                        </Grid.RowDefinitions>
+                        <GroupBox Header="Regex AutoFill">
+
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="*"/>
+                                </Grid.RowDefinitions>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid Grid.Row="1" Grid.ColumnSpan="7">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="*"/>
+                                        <ColumnDefinition Width="60"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label Grid.Column="0" Content="SettingName"/>
+                                    <Label Grid.Column="1" Content="AppendFront"/>
+                                    <Label Grid.Column="2" Content="RegexFilter"/>
+                                    <Label Grid.Column="3" Content="AppendEnd"/>
+                                    <Label Grid.Column="4" Content="Full match"/>
+                                    <Label Grid.Column="5" Content="Group match"/>
+                                </Grid>
+                                <ItemsControl Grid.Row="2" Grid.ColumnSpan="7" ItemsSource="{Binding AutoFill}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="60"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="0" Content="{Binding SettingName}"/>
+                                                <Label Grid.Column="1" Content="{Binding AppendFront}"/>
+                                                <Label Grid.Column="2"  Content="{Binding RegexFilter}"/>
+                                                <Label Grid.Column="3" Content="{Binding AppendEnd}"/>
+                                                <Label Grid.Column="4"  Content="{Binding UseRegexFullMatch}"/>
+                                                <Label Grid.Column="5" Content="{Binding SelectedRegexGroupe}"/>
+                                                <Button Grid.Column="6" Content="Remove" Command="{Binding DeleteAutoFilter}" Margin="0,3,0,3"/>
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                                <TextBox Grid.Row="0" Grid.Column="0" Text="{Binding SettingName}" Margin="0,3,0,3"/>
+                                <TextBox Grid.Row="0" Grid.Column="1" Text="{Binding AppendFront}" Margin="3,3,3,3"/>
+                                <TextBox Grid.Row="0" Grid.Column="2"  Text="{Binding RegexFilter}" Margin="0,3,0,3"/>
+                                <TextBox Grid.Row="0" Grid.Column="3" Text="{Binding AppendEnd}" Margin="3,3,3,3"/>
+                                <CheckBox Grid.Row="0" Grid.Column="4" IsChecked="{Binding UseRegexFullMatch}" Margin="3,6,0,0"/>
+                                <TextBox Grid.Row="0" Grid.Column="5" Text="{Binding SelectedRegexGroupe}" Margin="3,3,3,3"/>
+                                <Button Grid.Row="0" Grid.Column="6" Content="Add" Command="{Binding AddAutoFilter}" Margin="0,3,0,3"/>
+                            </Grid>
+
+                        </GroupBox>
+                        <GroupBox Grid.Row="1" Header="Settings">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="Auto"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Content="Default program folder path"/>
+                                <TextBox Grid.Column="1" Text="{Binding DefaultProgramPath}" Margin="0,3,3,3"/>
+                                <Label Grid.Column="2" Content="Default Metadata file path"/>
+                                <TextBox Grid.Column="3" Text="{Binding DefaultMetadataPath}" Margin="0,3,3,3"/>
+                                <Button Grid.Column="4" Content="Save" Command="{Binding SaveDefaultPaths}" Margin="0,3,0,3"/>
+                            </Grid>
+                        </GroupBox>
+                        <GroupBox Grid.Row="2" Header="Add properties">
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="60"/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="Auto"/>
+                                    <RowDefinition Height="Auto"/>
+                                </Grid.RowDefinitions>
+                                <Label Grid.Column="0" Content="Property name" HorizontalAlignment="Right"/>
+                                <TextBox Grid.Column="1" Text="{Binding PropertyName}" Margin="0,3,3,3"/>
+                                <Label Grid.Column="2" Content="Field type" HorizontalAlignment="Right"/>
+                                <ComboBox Grid.Column="3" ItemsSource="{Binding FieldTypeOptions}" SelectedItem="{Binding SelectedFieldType}" Margin="0,3,3,3"/>
+                                <Button Grid.Column="4" Content="Add" Command="{Binding AddPeroperty}" Margin="0,3,0,3"/>
+                                <ItemsControl ItemsSource="{Binding Settings}" Grid.Row="1" Grid.ColumnSpan="5">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <Grid>
+                                                <Grid.ColumnDefinitions>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="*"/>
+                                                    <ColumnDefinition Width="60"/>
+                                                </Grid.ColumnDefinitions>
+                                                <Label Grid.Column="1" Content="{Binding Name}"></Label>
+                                                <Label Grid.Column="3" Content="{Binding FieldType}"></Label>
+                                                <Button Grid.Column="4" Content="Remove" Margin="0,3,0,3" Command="{Binding RemoveProperty}" IsEnabled="{Binding RemoveEnabled}"/>
+                                                <!--<TextBox Grid.Column="1" Visibility="Visible" Text="{Binding Content}" Margin="3,0,3,3"></TextBox>-->
+                                            </Grid>
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </Grid>
+                        </GroupBox>
+                    </Grid>
+                </ScrollViewer>
+            </TabItem>
+        </TabControl>
+    </Grid>
+</Window>
