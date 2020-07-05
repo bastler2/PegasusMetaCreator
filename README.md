@@ -43,3 +43,8 @@ Configurations
       textbox = single line
       textbox-L = multiline and bigger
       textbox-XL = multiline and bigger
+![Alt text](/PegasusMetaCreator/Main.PNG?raw=true)
+![Alt text](/PegasusMetaCreator/Config.PNG?raw=true)
+      
+      
+      
