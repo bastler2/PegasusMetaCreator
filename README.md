@@ -19,30 +19,37 @@ How to use it(without having to change the "default program folder path" variabl
   6. Jump back to step 4 to add more programs
   7. Press Export to export the metadata.pegasus.txt (default metadata path = ..\metadata.pegasus.txt)
 
-Metadata Editor/Creator
-  Add Program = add current displayed properties to the "Added programs" list
-  Save Changes = saves changes when editing properties after program was added
-  Export = exports the metadata.pegasus.txt file (path can be changed n the Configurations tab -> Default metadata file path)
-  Import = imports the metadata.pegasus.txt file (path can be changed n the Configurations tab -> Default metadata file path)
-  Delete program = deletes selected program from "Added programs"
+**Metadata Editor/Creator options** | **Description**
+:-----:|:-----:
+Add Program | add current displayed properties to the "Added programs" list
+Save Changes | saves changes when editing properties after program was added
+Export | exports the metadata.pegasus.txt file (path can be changed n the Configurations tab -> Default metadata file path)
+Import | imports the metadata.pegasus.txt file (path can be changed n the Configurations tab -> Default metadata file path)
+Delete program | deletes selected program from "Added programs"
 
 Configurations
-  Regex AutoFill
-    SettingName = name of property which will get automatically filled
-    AppendFront = Add string to the front of the file path
-    RegexFilter = Filter to use regular expression on the file path (this is applied before AppendFront and AppendEnd )
-    AppendEnd = Add string to the end of the file path
-    FullMatch = check if you want to use the full match, uncheck if you want to use Group match
-    Group match = if FullMatch isn't enabled this in the index of the matched group
-  Settings
-    Default program folder path = where should I look for executables
-    Default metadata file path = where is the metadata.pegasus.txt file located
-  Add properties
-    Property name = name of property
-    Field type =
-      textbox = single line
-      textbox-L = multiline and bigger
-      textbox-XL = multiline and bigger
+
+**Regex AutoFill options** | **Description**
+:-----:|:-----:
+SettingName | name of property which will get automatically filled
+AppendFront | Add string to the front of the file path
+RegexFilter | Filter to use regular expression on the file path (this is applied before AppendFront and AppendEnd )
+AppendEnd | Add string to the end of the file path
+FullMatch | check if you want to use the full match
+Group match | if FullMatch isn't enabled this in the index of the matched group
+    
+**Settings options** | **Description**
+:-----:|:-----:
+Default program folder path | where should I look for executables
+Default metadata file path | where is the metadata.pegasus.txt file located
+
+**Add properties options** | **Description**
+:-----:|:-----:
+|Property name | name of property
+|Field type | textbox = single line
+|Field type | textbox-L = multiline and bigger
+|Field type | textbox-XL = multiline and bigger
+           
 ![Alt text](/PegasusMetaCreator/Main.PNG?raw=true)
 ![Alt text](/PegasusMetaCreator/Config.PNG?raw=true)
       
