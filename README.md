@@ -8,7 +8,9 @@ So I looked into solutions and found the Pegasus frontend, which you can configu
 
 I wanted it to be able to dynamically adding properties and automatically fill properties by regex matching the file path
 
-Known bug: when importing properties which fieldType is textbox-L or textbox-XL, and they are populated over multiple lines, it only reads the first line.
+Known bug: 
+  1.when importing properties which fieldType is textbox-L or textbox-XL, and they are populated over multiple lines, it only reads the first line.
+  2.undercores (_) wont be shown in the ui
 
 How to use it(without having to change the "default program folder path" variable in the configurations tab):
   1. Download the latest release here:
@@ -32,8 +34,11 @@ Delete program | deletes selected program from "Added programs"
 
 # Info Configurations tab
 ![Alt text](/PegasusMetaCreator/Config.PNG?raw=true)
+
 Regex AutoFill = applys regex filter on game path, after that it can append at the front of the string or at the end with AppendFront and AppendEnd, if these 3 steps are finished it will automatically fill your set field when you are selecting a game
-Info: The program comes with 3 default Regex AutoFill rules 
+
+Info: The program comes with 3 default Regex AutoFill rules
+
   1. game -> converts path like this: C:\SuperHot\Superhot.exe -> Superhot
   2. file -> 'converts' like this: C:\SuperHot\Superhot.exe -> C:\SuperHot\Superhot.exe (just for auto-fill without changing)
   3. assets.box_front -> converts like this C:\SuperHot\Superhot.exe -> C:\SuperHot\Superhot.png
