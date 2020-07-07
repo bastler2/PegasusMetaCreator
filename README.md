@@ -37,6 +37,7 @@ Info: The program comes with 3 default Regex AutoFill rules
   1. game -> converts path like this: C:\SuperHot\Superhot.exe -> Superhot
   2. file -> 'converts' like this: C:\SuperHot\Superhot.exe -> C:\SuperHot\Superhot.exe (just for auto-fill without changing)
   3. assets.box_front -> converts like this C:\SuperHot\Superhot.exe -> C:\SuperHot\Superhot.png
+
 **Regex AutoFill options** | **Description**
 :-----:|:-----:
 SettingName | name of property which will get automatically filled
@@ -45,7 +46,7 @@ RegexFilter | Filter to use regular expression on the file path (this is applied
 AppendEnd | Add string to the end of the file path
 FullMatch | check if you want to use the full match
 Group match | if FullMatch isn't enabled this in the index of the matched group
-    
+
 **Settings options** | **Description**
 :-----:|:-----:
 Default program folder path | where should I look for executables
