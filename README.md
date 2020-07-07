@@ -32,6 +32,11 @@ Delete program | deletes selected program from "Added programs"
 
 # Info Configurations tab
 ![Alt text](/PegasusMetaCreator/Config.PNG?raw=true)
+Regex AutoFill = applys regex filter on game path, after that it can append at the front of the string or at the end with AppendFront and AppendEnd, if these 3 steps are finished it will automatically fill your set field when you are selecting a game
+Info: The program comes with 3 default Regex AutoFill rules 
+  1. game -> converts path like this: C:\SuperHot\Superhot.exe -> Superhot
+  2. file -> 'converts' like this: C:\SuperHot\Superhot.exe -> C:\SuperHot\Superhot.exe (just for auto-fill without changing)
+  3. assets.box_front -> converts like this C:\SuperHot\Superhot.exe -> C:\SuperHot\Superhot.png
 **Regex AutoFill options** | **Description**
 :-----:|:-----:
 SettingName | name of property which will get automatically filled
