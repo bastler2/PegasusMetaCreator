@@ -18,7 +18,8 @@ How to use it(without having to change the "default program folder path" variabl
   5. Press "Add program"
   6. Jump back to step 4 to add more programs
   7. Press Export to export the metadata.pegasus.txt (default metadata path = ..\metadata.pegasus.txt)
-           
+   
+# Info Metadata Editor/Creator tab
 ![Alt text](/PegasusMetaCreator/Main.PNG?raw=true)
 **Metadata Editor/Creator options** | **Description**
 :-----:|:-----:
@@ -29,6 +30,7 @@ Import | imports the metadata.pegasus.txt file (path can be changed n the Config
 Delete program | deletes selected program from "Added programs"
 
 
+# Info Configurations tab
 ![Alt text](/PegasusMetaCreator/Config.PNG?raw=true)
 **Regex AutoFill options** | **Description**
 :-----:|:-----:
@@ -50,7 +52,3 @@ Default metadata file path | where is the metadata.pegasus.txt file located
 |Field type | textbox = single line
 |Field type | textbox-L = multiline and bigger
 |Field type | textbox-XL = multiline and bigger
-
-      
-      
-      
